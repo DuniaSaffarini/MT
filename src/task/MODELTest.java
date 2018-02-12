@@ -1,64 +1,57 @@
 package task;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import javax.swing.JOptionPane;
+import org.junit.*;
+import org.junit.Test;
 
-import java.awt.event.ActionListener;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
-class MODELTest {
+public class MODELTest {
 	VIEW view =new VIEW();
-	MODEL model=new MODEL();
+	MODEL model= new MODEL();
 	CONTROLLER controller=new CONTROLLER(view,model);
 
-	@BeforeEach
-	void setUp() throws Exception {
-	}
 
 	@Test
-	void testAddNum() {
+	public void testAddNum() {
 		//fail("Not yet implemented");
-		//model.addNum(2.0, 7.0);
-	   // assertEquals(9.0,model.getResultValue());
+		model.addNum(2.0, 7.0);
+	    assertEquals(9.0,model.getResultValue(),0.0);
 	}
 
 	@Test
-	void testSubNum() {
+	public void testSubNum() {
 		//fail("Not yet implemented");
-	//	model.subNum(9.0,4.0);
-	//	assertEquals(5.0,model.getResultValue());
+      	model.subNum(9.0,4.0);
+		assertEquals(5.0,model.getResultValue(),0.0);
 	}
 
 	@Test
-	void testModNum() {
+	public void testModNum() {
 	//	fail("Not yet implemented");
-		
-			}
+	}
 
 	@Test
-	void testMulNum() {
+	public void testMulNum() {
+		//fail("Not yet implemented");
 		model.mulNum(2.0, 5.0);
-		assertEquals(10.0,model.getResultValue());
-		//fail("Not yet implemented");
+		assertEquals(10.0,model.getResultValue(),0.0);
 	}
 
 	@Test
-	void testDivNum() {
+	public void testDivNum() {
 		//fail("Not yet implemented");
-		//model.divNum(9.0, 0.0);
-		//assertTrue(model.flag);
+		model.divNum(9.0, 0.0);
+		assertTrue(model.flag);
 	}
 
 	@Test
-	void testSqrNum() {
+	public void testSqrNum() {
 		//fail("Not yet implemented");
-		//model.sqrNum(-7);
-		//assertTrue(model.flag);
+		model.sqrNum(-7);
+		assertEquals(true,model.flag);
 	}
-	
-	
-	
-	
 
 }

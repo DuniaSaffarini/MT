@@ -178,20 +178,6 @@ public class VIEW {
 	
 	//-----------------------------------------------
 
-	/*public int getFirstNumOfMOD() {
-		
-	
-		
-		return Integer.parseInt(this.textField1.getText());
-	
-	}
-	
-	public int getSecondNumOfMOD() {
-		
-		return Integer.parseInt(this.textField2.getText());
-		
-	
-	}*/
 	
 	public double getFirstNum() {
 		return Double.parseDouble(this.textField1.getText());
@@ -217,14 +203,11 @@ public class VIEW {
 		return Double.parseDouble(this.textField3.getText());
 	}
 	
-	
-	
 	public void setResultNum(double result) {
 		this.textField3.setText(Double.toString(result));
 	}
-	
-	public void setResultNumForMOD(int result) {
-		this.textField3.setText(Double.toString(result));
+	public void setResultNumS(String result) {
+		this.textField3.setText(result);
 	}
 	
 	public void clrResultNum() {
@@ -268,3 +251,4 @@ public class VIEW {
 		
 	}
 }
+

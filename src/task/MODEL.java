@@ -1,14 +1,13 @@
+
 package task;
 
 import javax.swing.JOptionPane;
 
 public class MODEL {
 
-	CONTROLLER R= new CONTROLLER();
+	
 	private double resultValue;
 	public boolean flag=false;
-	public boolean flagForMod =false; 
-
 	
 	public void addNum (double firstNum , double secondNum) {
 		flag=false;
@@ -23,13 +22,10 @@ public class MODEL {
 	}
 	
 	public void modNum (double firstNum , double secondNum) {
+		flag=false;
+		this.resultValue=firstNum%secondNum ;
 		
-		
-
-			 this.resultValue=firstNum%secondNum ;
-
-		 }
-	
+	}
 	
 	public void mulNum (double firstNum , double secondNum) {
 		flag=false;
@@ -40,7 +36,7 @@ public class MODEL {
 	public void divNum (double firstNum , double secondNum) {
 		flag=false;
 		if (secondNum == 0.0)	{
-		JOptionPane.showMessageDialog(null, "Divide by 0 !!");
+		//JOptionPane.showMessageDialog(null, "Divide by 0 !!");
 		flag=true;
 		}
 		else {
@@ -54,20 +50,14 @@ public class MODEL {
 		flag=false;
 		if (firstNum < 0.0) {
 			flag=true;
-			JOptionPane.showMessageDialog(null, "The Number is Negative !!");
+			//JOptionPane.showMessageDialog(null, "The Number is Negative !!");
 		}
-		flag=false;
 		this.resultValue= Math.sqrt(firstNum);
-		
 	}
 	
 	public double getResultValue () {
 		return this.resultValue;
 	}
 	
-	public int getResultValueForMOD () {
-		return (int)(this.resultValue);
-		
-	}
-	
 }
+

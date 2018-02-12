@@ -1,22 +1,16 @@
 package task;
 
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+
 public class CONTROLLER {
 	
 	private VIEW viewObj;
 	private MODEL modelObj;
-	//public boolean flagToModel=false;
-	public boolean flagToModel;
-	
-	public CONTROLLER() {
-	
-	}
-	
-	
 	
 	public CONTROLLER(VIEW V ,MODEL M) {
 		this.viewObj=V;
@@ -51,7 +45,8 @@ public class CONTROLLER {
 	        		viewObj.setResultNum(modelObj.getResultValue());
 	              
 	          } catch (NumberFormatException nfex) {
-		             JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+		           //  JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+	        	  viewObj.setResultNumS("Not Valid");
 	          }
 	      }
 	  }
@@ -74,7 +69,8 @@ public class CONTROLLER {
 	        		viewObj.setResultNum(modelObj.getResultValue());
 	              
 	          } catch (NumberFormatException nfex) {
-		             JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+		         //    JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+	        	  viewObj.setResultNumS("Not Valid");
 	          }
 	      }
 	  }
@@ -96,7 +92,8 @@ public class CONTROLLER {
 	        		viewObj.setResultNum(modelObj.getResultValue());
 	              
 	          } catch (NumberFormatException nfex) {
-		             JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+		           //  JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+	        	  viewObj.setResultNumS("Not Valid");
 	          }
 	      }
 	  }
@@ -113,14 +110,18 @@ public class CONTROLLER {
 	        	  FirstNum =viewObj.getFirstNum();
 		        	  SecondNum = viewObj.getSecondNum();
 	        		modelObj.divNum(FirstNum,SecondNum);
-	        		if(modelObj.flag==true)viewObj.clrResultNum();
+	        		if(modelObj.flag==true) {
+	        			viewObj.clrResultNum();
+	        		    viewObj.setResultNumS("Not Valid");
+	        		}
 	        		else {
 	        			viewObj.setResultNum(modelObj.getResultValue());
 	        		}
 	          }
 	          
 	          catch (NumberFormatException n) {
-		             JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+		           //  JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+	        	  viewObj.setResultNumS("Not Valid");
 	          }
 	      }
 	  }
@@ -130,19 +131,18 @@ public class CONTROLLER {
 	class modListener implements ActionListener {
 		@Override
 	      public void actionPerformed(ActionEvent e) {
-			
-		    	  double FirstNum=0.0 ;
-		    	  double  SecondNum=0.0 ; 
-		    	  
-		          try {
-		        	  FirstNum =viewObj.getFirstNum();
-		        	  SecondNum = viewObj.getSecondNum();
-		        		modelObj.modNum(FirstNum,SecondNum);
-		        		viewObj.setResultNum(modelObj.getResultValue());
-		              
+	    	  double FirstNum=0.0 ;
+	    	  double  SecondNum=0.0 ; 
+	    	  
+	          try {
+	        	  FirstNum =viewObj.getFirstNum();
+	        	  SecondNum = viewObj.getSecondNum();
+	        		modelObj.modNum(FirstNum,SecondNum);
+	        		viewObj.setResultNum(modelObj.getResultValue());
 	              
 	          } catch (NumberFormatException nfex) {
-	             JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+	            // JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+	        	  viewObj.setResultNumS("Not Valid");
 	          }
 	      }
 	  }
@@ -156,14 +156,19 @@ public class CONTROLLER {
 	          try {
 	        	  FirstNum =viewObj.getFirstNum();
 				  modelObj.sqrNum( FirstNum);
-				  if(modelObj.flag==true) viewObj.clrResultNum();
+				  if(modelObj.flag==true) {
+					  viewObj.clrResultNum();
+					  viewObj.setResultNumS("Not Valid");
+					  
+				  }
 				  else {
 					  viewObj.setResultNum(modelObj.getResultValue());
 				  }
 
 	          } 
 	          catch (NumberFormatException n) {
-		             JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+		             //JOptionPane.showMessageDialog(null,"Please enter a number, not string !!");
+	        	  viewObj.setResultNumS("Not Valid");
 	          }
 			
 		}
@@ -171,3 +176,4 @@ public class CONTROLLER {
 	}
 
 }
+
